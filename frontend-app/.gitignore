@@ -1,0 +1,113 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Lock files (keep them if you intentionally commit lockfiles to repo)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Expo
+.expo/
+.expo-shared/
+web-build/
+
+# Metro, bundler & caches
+.expo/cache/
+.expo/web/cache/
+.expo-shared/assets.json
+.cache/
+.parcel-cache/
+/.pnp.*
+
+# React Native / Android / iOS build artifacts
+# Android
+android/.gradle/
+android/app/build/
+android/.idea/
+
+# iOS
+ios/Pods/
+ios/build/
+*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+
+# Xcode - keep user-specific files out
+*.mode1v3
+*.pbxuser
+*.perspectivev3
+
+# Keystore and signing
+*.jks
+*.keystore
+android/key.properties
+
+# Gradle
+/.gradle/
+
+# Google services / credentials (optional secrets)
+google-services.json
+*-info.plist
+credentials.json
+
+# Environment variables
+.env
+.env.*.local
+.env.local
+
+# TypeScript
+*.tsbuildinfo
+dist/
+build/
+out/
+lib/
+
+# Testing
+coverage/
+junit_reports/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS files
+._*
+Icon?
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Misc
+.expo/credentials.json
+.history/
+
+# Ignore build outputs from bundlers
+dist/
+build/
+
+# Yarn v2 cache & plug'n'play
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Optional: ignore local development files
+# local.properties
+expo-env.d.ts
