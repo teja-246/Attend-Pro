@@ -1,5 +1,5 @@
-import { University } from "../models/university.model";
-import { User } from "../models/user.model";
+import { University } from "../models/university.model.js";
+import { User } from "../models/user.model.js";
 
 const registerUniversity = async (req, res) => {
     try {
@@ -19,8 +19,12 @@ const registerUniversity = async (req, res) => {
         res.status(201).json({ message: "University registered successfully", university: newUniversity });
     }
     catch (error) {
-        res.status(500).json({ message: "Error registering university", error });
-    }
+    console.error("Register university error:", error); // for debugging
+    return res.status(500).json({ 
+        message: "Error registering university", 
+        error: error.message 
+    });
+}
 };
 const registerUser = async (req, res) => {
     try {
