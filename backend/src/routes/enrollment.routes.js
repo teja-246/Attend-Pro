@@ -3,7 +3,7 @@ import { enrollStudent, getEnrollmentByCourse, getEnrollmentByStudent, unenrollm
 
 const router = Router()
 
-router.route('/').post(enrollStudent)
+router.route('/enrollStudent').post(enrollStudent)
 router.route('/course/:courseId').get(getEnrollmentByCourse)
 router.route('/student/:studentId').get(getEnrollmentByStudent)
-router.route('/:id').delete(unenrollmentStudent)
+router.route('/:studentId').delete(unenrollmentStudent)

@@ -1,6 +1,8 @@
 import jwt from "jsonwebtoken"
 import { User } from "../models/user.model.js"
 
+// dont make changes in this file 
+
 export const verifyJWT = async(req,res,next)=>{
     try {
         console.log("Verifying JWT..."); // Debug log

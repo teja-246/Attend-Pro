@@ -4,5 +4,8 @@ import { createCourse, deleteCourse, getAllCourses, getCourseById, updateCourse 
 
 const router = Router();
 
-router.route('/').post(createCourse).get(getAllCourses)
-router.route('/:id').get(getCourseById).put(updateCourse).delete(deleteCourse)
+router.route('/createCourse').post(createCourse)
+router.route('/getAllCourses').get(getAllCourses)
+router.route('/getCourse/:courseId').get(getCourseById)
+router.route('/updateCourse/:courseId').put(updateCourse)
+router.route('/deleteCourse/:courseId').delete(deleteCourse)
