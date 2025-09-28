@@ -3,9 +3,13 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken'
 
 const userSchema = new Schema({
+    user_id: {type: String, required: true, unique: true}, //this is user roll no. or faculty id so as to uniquely identify them
     userType: {type: String, enum: ['student', 'faculty', 'hod'], required: true},
-    username: {type: String, required: true, unique: true},
+    firstName: {type: String, required: true, },
+    lastName: {type: String},
+    email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
+    created_at: {type: Date, default: Date.now}
 })
 
 userSchema.methods.isPasswordValid = async function(password) {
@@ -15,7 +19,8 @@ userSchema.methods.generateAccessToken = function () {
     return jwt.sign(
         {
             _id: this._id,
-            username: this.username,
+            firstName: this.firstName,
+            lastName: this.lastName
         },
         process.env.ACCESS_TOKEN_SECRET,
         { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }

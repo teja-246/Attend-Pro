@@ -32,12 +32,12 @@ export default function RegistrationScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity 
+        {/* <TouchableOpacity 
           style={styles.backButton}
           onPress={() => router.back()}
         >
           <Ionicons name="arrow-back" size={24} color="#fff" />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text style={styles.title}>Register Your Device</Text>
         <Text style={styles.subtitle}>Complete your profile to get started</Text>
       </View>

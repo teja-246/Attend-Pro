@@ -37,7 +37,7 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
       <View style={styles.header}>
         <Text style={styles.logo}>AttendPro</Text>
         <Text style={styles.subtitle}>Your attendance tracking companion</Text>
@@ -82,7 +82,7 @@ export default function LoginScreen() {
           <Text style={styles.secondaryBtnText}>Login with Biometrics</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => router.push('/auth/register')}>
+        <TouchableOpacity onPress={() => router.push('/register')}>
           <Text style={styles.link}>First time here? Register your device.</Text>
         </TouchableOpacity>
       </View>

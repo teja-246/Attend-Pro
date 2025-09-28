@@ -24,18 +24,24 @@ const registerUniversity = async (req, res) => {
 };
 const registerUser = async (req, res) => {
     try {
-        const { userType, username, password } = req.body;
-        if (username.length < 1) {
-            throw new Error("Username cannot be empty");
+        const { user_id, userType, firstName, lastName, email, password } = req.body;
+        if (firstName.length < 1) {
+            throw new Error("First name cannot be empty");
         }
         if (password.length < 1) {
             throw new Error("Password can't be empty");
         }
-        const existingUser = await User.findOne({ username });
-        if (existingUser) {
-            throw new Error("Username already exists");
+        if (email.length < 1) {
+            throw new Error("Email can't be empty");
         }
-        const newUser = new User({ userType, username, password });
+        if (user_id.length < 1) {
+            throw new Error("User ID can't be empty");
+        }
+        const existingUser = await User.findOne({ user_id });
+        if (existingUser) {
+            throw new Error("User already exists");
+        }
+        const newUser = new User({ user_id, userType, firstName, lastName, email, password });
         await newUser.save();
         res.status(201).json({ message: "User registered successfully", user: newUser });
     }
@@ -60,10 +66,10 @@ const generateAccessandRefreshTokens = async(userId) =>{
 }
 const loginUser = async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ username });
+        const { user_id, password } = req.body;
+        const user = await User.findOne({ user_id });
         if (!user) {
-            return res.status(401).json({ message: "Invalid username" });
+            return res.status(401).json({ message: "Invalid ID" });
         }
         const isPasswordValid = user.isPasswordValid(password);
         if (!isPasswordValid) {

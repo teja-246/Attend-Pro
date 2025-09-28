@@ -16,9 +16,9 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-        <Stack.Screen name="auth" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }}  />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} /> */}
         <Stack.Screen name="qr-scanner" options={{ presentation: 'modal', headerShown: false }} />
         <Stack.Screen name="result" options={{ presentation: 'modal', headerShown: false }} />
         <Stack.Screen name="biometric-setup" options={{ presentation: 'transparentModal', headerShown: false }} />

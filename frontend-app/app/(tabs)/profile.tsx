@@ -9,8 +9,8 @@ export default function ProfileScreen() {
       'Logout',
       'Are you sure you want to logout?',
       [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Logout', style: 'destructive', onPress: () => router.push('/auth/login') }
+        { text: 'Cancel', style: 'cancel' },  
+        { text: 'Logout', style: 'destructive', onPress: () => {router.replace('/login')} }
       ]
     );
   };
